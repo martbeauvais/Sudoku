@@ -7,14 +7,13 @@ public class App {
         s.generate();
         long endTime = System.nanoTime();
 
-        long nanotime = endTime - startTime;
+        long nanoTimer = endTime - startTime;
 
         s.printGrid();
 
-        System.out.println("total nano sec  : " + nanotime);
-        System.out.println("total milli sec : " + nanotime / 1000000);
+        System.out.println("total nano sec  : " + nanoTimer);
+        System.out.println("total milli sec : " + nanoTimer / 1000000);
 
         System.out.println();
-
     }
 }
