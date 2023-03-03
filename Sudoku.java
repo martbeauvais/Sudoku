@@ -91,6 +91,23 @@ public class Sudoku {
                     return true;
             }
         }
+
+        // Scan diagonal cells
+        if (ligne == colonne) { // Check main diagonal
+            for (int i = 0; i < gridSize; i++) {
+                if (grid[i][i] == x) {
+                    return true;
+                }
+            }
+        }
+        if (ligne + colonne == gridSize - 1) { // Check secondary diagonal
+            for (int i = 0; i < gridSize; i++) {
+                if (grid[i][gridSize - i - 1] == x) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 
