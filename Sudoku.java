@@ -65,7 +65,7 @@ public class Sudoku {
         }
     }
 
-    /* méthode pour détecter x dans une ligne, une colonne ou une box */
+    /* method that returns true if x is detected in a row, a column of a box */
     private boolean scan() {
 
         // scan line
@@ -92,26 +92,10 @@ public class Sudoku {
             }
         }
 
-        // Scan diagonal cells
-        if (ligne == colonne) { // Check main diagonal
-            for (int i = 0; i < gridSize; i++) {
-                if (grid[i][i] == x) {
-                    return true;
-                }
-            }
-        }
-        if (ligne + colonne == gridSize - 1) { // Check secondary diagonal
-            for (int i = 0; i < gridSize; i++) {
-                if (grid[i][gridSize - i - 1] == x) {
-                    return true;
-                }
-            }
-        }
-
         return false;
     }
 
-    /* method pour effacer le tableau et recommencer */
+    /* method to clear the grid when the grid has become impossible to complete */
     private void clearGrid() {
 
         for (int i = 0; i < gridSize; i++) {
@@ -124,7 +108,7 @@ public class Sudoku {
 
     }
 
-    /* méthode pour afficher le tableau */
+    /* method to clear the grid */
     public void printGrid() {
         System.out.println();
         for (int i = 0; i < gridSize; i++) {
