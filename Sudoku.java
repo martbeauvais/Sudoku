@@ -12,9 +12,7 @@ public class Sudoku {
     private int boxSize;
     private int countTotal = 0;
 
-    /*
-     * constructeur
-     */
+    // constructor
     public Sudoku(int gridSize) {
         this.gridSize = gridSize;
         grid = new int[gridSize][gridSize];
