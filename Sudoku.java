@@ -27,7 +27,7 @@ public class Sudoku {
 
     }
 
-    /* méthode pour générer un tableau */
+    // method to generate a grid
     public void generate() {
         for (ligne = 0; ligne < gridSize; ligne++) {
             for (colonne = 0; colonne < gridSize; colonne++) {
@@ -106,7 +106,7 @@ public class Sudoku {
 
     }
 
-    /* method to clear the grid */
+    /* method to print the grid */
     public void printGrid() {
         System.out.println();
         for (int i = 0; i < gridSize; i++) {
