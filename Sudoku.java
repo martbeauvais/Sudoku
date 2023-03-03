@@ -133,6 +133,6 @@ public class Sudoku {
             System.out.println();
         }
         System.out.println();
-        System.out.println("appels a clearGrid : " + countTotal);
+        System.out.println("calls to clearGrid : " + countTotal);
     }
 }
