@@ -10,7 +10,8 @@ public class Sudoku {
     private int colonne;
     private int count = 0;
     private int boxSize;
-    private int countTotal = 0;
+    private int countCallsToClearedGrid = 0;
+    private int countRestartedGridAtPosition00 = 0;
 
     // constructor
     public Sudoku(int gridSize) {
@@ -35,13 +36,14 @@ public class Sudoku {
                 if (scan()) {
 
                     for (int i = 0; i < gridSize - 1; i++) {
-                        if (!scan()) {
-                            grid[ligne][colonne] = x;
-                            break;
-                        } else if (x == gridSize) {
+                        if (x == gridSize) {
                             x = 1;
                         } else {
                             x++;
+                        }
+                        if (!scan()) {
+                            grid[ligne][colonne] = x;
+                            break;
                         }
                     }
 
@@ -49,11 +51,12 @@ public class Sudoku {
                         ligne = 0;
                         colonne = -1;
                         count++;
+                        countRestartedGridAtPosition00++;
 
                         if (count > (gridSize * gridSize)) {
                             clearGrid();
                             count = 0;
-                            countTotal++;
+                            countCallsToClearedGrid++;
                         }
                     }
                 } else {
@@ -132,6 +135,7 @@ public class Sudoku {
             System.out.println();
         }
         System.out.println();
-        System.out.println("calls to clearGrid : " + countTotal);
+        System.out.println("times grid restarted : " + countRestartedGridAtPosition00);
+        System.out.println("calls to clearGrid : " + countCallsToClearedGrid);
     }
 }
